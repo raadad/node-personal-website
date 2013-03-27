@@ -1,0 +1,62 @@
+ul
+	if page == 'Home' 
+		li(class='selected') 
+			a(href='/') 
+				i.icon-star.icon-white  
+				
+	else
+		li 
+			a(href='/') 
+				i.icon-star.icon-white 
+				|  Home
+	if page == 'Resume' 
+		li(class='selected') 
+			a(href='/resume/') 
+				i.icon-road.icon-white  
+				
+				
+	else
+		li 
+			a(href='/resume/') 
+				i.icon-road.icon-white 
+				|   Resume
+	if page == 'Blog' 
+		li(class='selected') 
+			a(href='/blog/') 
+				i.icon-book.icon-white  
+				
+	else
+		li 
+			a(href='/blog/') 
+				i.icon-book.icon-white  
+				|	Blog
+	if page == 'GitHub Projects' 
+		li(class='selected') 
+			a(href='/projects/') 
+				i.icon-signal.icon-white  
+				
+	else
+		li 
+			a(href='/projects/') 
+				i.icon-signal.icon-white  
+				|   GitHub Projects
+	if page == 'Screen Casts' 
+		li(class='selected') 
+			a(href='/screencasts/') 
+				i.icon-film.icon-white  
+				
+	else
+		li 
+			a(href='/screencasts/') 
+				i.icon-film.icon-white  
+				|   Screencasts									
+	if page == 'Contact' 
+		li(class='selected') 
+			a(href='/contact/') 
+				i.icon-envelope.icon-white  
+				
+	else
+		li 
+			a(href='/contact/') 
+				i.icon-envelope.icon-white  
+				|   Contact			

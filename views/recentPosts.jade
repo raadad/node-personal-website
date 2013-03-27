@@ -1,0 +1,9 @@
+ul.recent_posts
+	each i in data.blog2
+		li
+			a(href='/blog/#{i.slug}/')
+				i.icon-pencil
+			a(href='/blog/#{i.slug}/')
+				h4 #{i.title}
+			span.meta
+				| #{i.date}

@@ -1,0 +1,21 @@
+extends pageLayout
+block content
+	section.masonry
+		each repo in data.repos
+				article.one_third
+					h2
+						img(src='/images/icons/folder_settings.png', alt='')
+						a(href='#{repo.svn_url}/') #{repo.name}
+					span.meta
+						a(href='#') #{repo.repo_name}
+					h5 Language: #{repo.language}
+					p
+						| #{repo.description}
+					a.read_more(href='#{repo.svn_url}/') View at Github
+					if repo.homepage
+						a.read_more(href='http://#{repo.homepage}/') View Live Instance
+			.clearfix	
+	section
+		nav.pagination.full
+			a.right(href='https://github.com/raadad') Visit Ray's Profile on GitHub»
+		.clearfix

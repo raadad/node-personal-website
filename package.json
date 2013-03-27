@@ -1,0 +1,24 @@
+{
+  "name": "elsleiman",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.0.0alpha1",
+    "jade": "*",
+    "less-middleware": "*",
+	  "emailjs":"*",
+    "tumblr":"*",
+    "jquery":"*",
+	"youtube-feeds":"*",
+	"github":"*",
+	"twit":"*"
+  },
+  "description": "ERROR: No README.md file found!",
+  "main": "entry.coffee",
+  "repository": "",
+  "author": "",
+  "license": "BSD"
+}

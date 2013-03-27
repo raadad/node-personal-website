@@ -1,0 +1,28 @@
+extends pageLayout
+block content
+        nav.full
+                a.btn.btn-danger(href="/blog/",style="color:#FFF")
+                        i.icon-chevron-left.icon-white
+                        |Go Back to Blog
+        section.blog.with_sidebar
+                each 
+                .two_thirds
+                        article(id="raxon")
+                                h2 
+                                        a(href='#{blog.post_url}')#{blog.title}
+                                span.meta
+                                        | #{blog.date}
+                                        span.separator |
+                                        | by #{blog.blog_name}
+                                div
+                                        |!{blog.body}
+
+                        .clearfix       
+                .sidebar.one_third
+                        .sidebar_item
+                        h3 My Blog
+                        h4 This site is fed from Tumblr.com, I like creating tutorials, sharing my experiences and  discussing my idea's with the world. I get a good feeling knowing i can give back to the community this way.
+        section
+                nav.pagination.full
+                        a.right(href='http://blog.elsleiman.com') Visit Ray's Blog on Tumblr»
+                .clearfix

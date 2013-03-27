@@ -1,0 +1,23 @@
+extends pageLayout
+block content
+	section.masonry
+		each blog in data.blog10
+			article.one_third
+				a.thumb(href='#{blog.slug}/')
+					img(width="100",src='#{blog.img}', alt='#{blog.imgalt}')
+				h2
+					a(href='#{blog.slug}/') #{blog.title}
+				span.meta
+					| #{blog.date}
+					span.separator |
+					| by 
+					a(href='#') #{blog.blog_name}
+				p
+					| #{blog.rawText255}...
+				a.read_more(href='#{blog.slug}/') Read more
+			.clearfix	
+	section
+		nav.pagination.full
+			a.right(href='http://blog.elsleiman.com') Visit Ray's Blog on Tumblr»
+		.clearfix
+

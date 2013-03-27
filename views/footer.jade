@@ -1,0 +1,28 @@
+footer
+	.container.masonry
+		.one_third
+			h3 Recent tweets
+			ul
+				each twit in data.tweets
+					li
+						a
+							h4(style="color:#666") #{twit.text}
+						span.meta(style="font-size:8px")
+							|#{twit.created_at.substring(0,twit.created_at.length -14)}
+						
+				a.read_more(href='https://github.com/raadad') Visit Ray's Twitter Account
+
+		.one_third
+			h3 Recent posts
+			include recentPosts
+		.one_third
+			h3 Contact
+			include contact
+	.clearfix
+	.bottom
+		.container
+			.copyright.one_half
+				| © 2012 Raadad Elsleiman
+			nav.one_half
+				include menu
+			.clearfix

@@ -1,0 +1,41 @@
+extends pageLayout
+block content
+	section
+		.full
+			h3 Details
+			p
+				| Need advice? Want me to help out? Got a Question? you can get a hold of me in the following ways:
+			include contact
+		.clearfix
+	hr
+
+	section
+		.one_half
+			h2  Why to get in contact with me?
+			p
+				| I love helping out, especially if its I.T related, so go right a head, pick up the phone or send me an email. 
+			p
+				| I Don't charge for small things, Email discussions, Phone conversations, Advice, Initial Consultations, Meetings - so don't worry you wont get any nasty unexpected invoices.
+			p
+				| Ive got a wealth of knowledge , a large contact base and love getting my hands dirty with I.T related situations, it works in my favour - you develop confidence in me and are more likely to use me in your future projects.
+
+		.one_half
+				h2#contactH Drop me a line
+				div#contactF
+					form#contact_form(action='#')
+						.one_quarter.top.first
+							label(for='name') Your name
+							input#name(name='name', type='text')
+						.one_quarter.top.last
+							label(for='email') E-mail
+							input#email(name='email', type='email')
+						.clearfix
+						div
+							label(for='message') Message
+							.textarea
+								textarea#message(name='message', cols='30', rows='10')
+						div
+							input(type='submit', value='Submit')
+							p.status
+
+		.clearfix

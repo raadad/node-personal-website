@@ -1,0 +1,21 @@
+extends pageLayout
+block content
+	section.masonry
+			each video in data.youtube.items
+				article.one_third
+					h2
+						img(width=200,src='#{video.thumbnail.hqDefault}', alt='')
+						a(href='#{video.player.default}/') #{video.name}
+					span.meta
+						a(href='#{video.player.default}') #{video.video_name}
+					h2(style="color:#000") #{video.title}
+					p
+						| #{video.description}
+					a.read_more(href='#{video.player.default}/') Watch at Youtube
+					if video.homepage
+						a.read_more(href='http://#{video.homepage}/') View Live Instance
+		.clearfix	
+	section
+		nav.pagination.full
+			a.right(href='https://youtube.com/raadad1') Visit Ray's Channel on Youtube»
+		.clearfix

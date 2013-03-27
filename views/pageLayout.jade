@@ -1,0 +1,13 @@
+extends layout
+block bricks
+	- var x = Math.ceil(Math.random() * 3);
+	.title(style='background-image: url(/images/#{x}x1280x300.jpg);')
+		.container
+			.full
+				h2 #{page}
+				p #{summary}
+	block content
+
+
+
+
