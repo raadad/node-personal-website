@@ -78,14 +78,16 @@ root.refreshPage = ->
 		if err? 
 			console.log "Githubs failed ",err
 		else
-			root.data.repos = res
+			cp = []
+			cp.push  i for i in res when (!i.private) and (!i.fork)
+			root.data.repos = cp
 			console.log "Githubs loaded without issue"
 
 	root.getBlogs ->
 		try
 			root.data.blog = {}
 			root.data.blog2 = []
-			root.data.blog10 = []		
+			root.data.blog10 = []
 			root.data.blogs = root.blogs
 			x = 0
 			for i , c of root.data.blogs
@@ -100,7 +102,7 @@ root.refreshPage = ->
 
 		catch e
 			console.log e
-	
+
 	youtube.user('raadad1').uploads (err,res) ->
 		if err
 			console.log "youtube loading failed"
