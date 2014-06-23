@@ -53,7 +53,7 @@ root.getBlogs = (cb) ->
 
 
 root.getRepos = (cb) ->
-	git = new gitapi  
+	git = new gitapi
 		version: "3.0.0"
 		timeout: 5000
 	git.authenticate
@@ -75,7 +75,7 @@ root.refreshPage = ->
 	root.data.tweets3 = {}
 
 	root.getRepos (err,res) ->
-		if err? 
+		if err?
 			console.log "Githubs failed ",err
 		else
 			cp = []
@@ -113,7 +113,7 @@ root.refreshPage = ->
 		if err
 			console.log "Error with titter ", err
 		else
-			root.data.tweets = reply
+			root.data.tweets = reply[0..2]
 			x = 0
 			for i , c of root.tweets
 				break if x > 3
@@ -161,9 +161,6 @@ app.post '/contact/', routes.contactPost
 root.suffix  = process.argv[2]
 root.env  = process.argv[3]
 
-if env == "prod"
-	http.createServer(app).listen 3212
-	console.log "Running #{env} on port 3212"
-else
-	http.createServer(app).listen 3000
-	console.log "Running #{env} on port 3000"
+
+http.createServer(app).listen 8081
+console.log "Running on port 3000"

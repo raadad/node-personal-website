@@ -13,26 +13,26 @@ exports.contactPost = (req,res) ->
 	console.log req.body
 	res.write("sent")
 	res.end()
-	message = 
+	message =
 		subject:"Message from elsleiman.com"
 		text:"""
 			Name:#{req.body.name}
 			Email:#{req.body.email}
 			Message:
-			#{req.body.text}		
+			#{req.body.text}
 			It shouldn't take long for us to process your request and get to calling your referees'
 			You will receive an email once your checks have been completed.
-			
+
 			If you have any issues or questions please feel free to contact us through support@refspy.com
 
 			An easy way to check on the current status of your referee check, is go to our website:
 			www.refspy.com - and login with the details you supplied.
 		"""
 		from:"#{req.body.email}"
-		to:"raadad@elsleiman.com"
+		to:"raadad@gmail.com"
 
 	root.ap.email.send message, (e,m)->
-		console.log m || e 
+		console.log m || e
 
 
 exports.screen = (req,res) ->
@@ -48,9 +48,9 @@ exports.projects = (req,res) ->
 exports.blog = (req,res) ->
 	console.log root.blogs
 	item = root.blogs["#{req.params.id}"]
-	if item? 
-		res.render 'blogItemPage', data:root.data, page:'Blog', summary:item.title, blog:item 
-	else 
+	if item?
+		res.render 'blogItemPage', data:root.data, page:'Blog', summary:item.title, blog:item
+	else
 		res.render 'blogPage' , data:root.data, page:'Blog',summary:"Whats is Ray Elsleiman talking about now?"
 
 ###
@@ -67,6 +67,6 @@ Express server listening on port 3000
     highlighted: [],
     note_count: 0,
     title: 'Hello World',
-    body: '<p>My first post, trying to test the tumblr api! looks niftyÂ <img alt="Lets see if i can pull this into my site" height="305" src="http://areyouhappyatwork.files.wordpress.com/2011/12/happiness_1.jpg" width="456"/></p>' 
+    body: '<p>My first post, trying to test the tumblr api! looks niftyÂ <img alt="Lets see if i can pull this into my site" height="305" src="http://areyouhappyatwork.files.wordpress.com/2011/12/happiness_1.jpg" width="456"/></p>'
   } ]
 ###
